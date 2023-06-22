@@ -20,5 +20,13 @@ reset();
 reload();
 
 function reset(){
-    $("#")
+    $("#info").hide();
+    $("#5-day").hide();
+    $("#data").hide();
+}
+
+function reload(){
+    $("#info").show();
+    $("#5-day").show();
+    $("#data");
 }
