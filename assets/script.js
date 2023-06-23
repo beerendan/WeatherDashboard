@@ -16,6 +16,7 @@ const weatherKey= "133ac2fd1fb23818bb44d4fc983d0159";
 const mapKey="pk.cec264f3752ff9b05b6b154b5308c254";
 
 //On page load
+
 reset();
 reload();
 
@@ -23,12 +24,12 @@ function reset(){
     $("#info").hide();
     $("#5-day").hide();
     $("#data").hide();
-}
+};
 
 function displayAll(){
     $("#info").show();
     $("#5-day").show();
-    $("#data");
+    $("#data").show();
 }
 
 //City search and addition to history of searched cities
@@ -115,7 +116,7 @@ function reload(){
 function setDisplay(lat,long){
     let lati=lat;
     let longi= long;
-    let weatherURL="https://api.openweathermap.org/data/3.0/onecall?lat=" + lati + "&lon=" + longi+ "&appid="+ weatherKey;
+    let weatherURL="https://api.openweathermap.org/data/3.0/onecall?lat=" + lati + "&lon=" + longi+ "&appid="+ weatherKey+ "&units=metric";
 
     fetch(weatherURL).then(function(response){return response.json()})
     .then(function(data){
@@ -125,9 +126,9 @@ function setDisplay(lat,long){
 
         $("#city").html("<h3>"+town+"("+today+")</h3>");
         
-        let temperature=data.list[0].main.temp+"°C";
-        let wind=data.list[0].main.wind_speed+"km/h";
-        let humidity=data.list[0].main.humidity+"%";
+        let temperature=data.current.temp+"°C";
+        let wind=data.current.wind_speed+"km/h";
+        let humidity=data.current.humidity+"%";
 
         $("#temperature").html("Temp:"+temperature);
         $("#wind").html("Wind:"+wind);
@@ -137,13 +138,13 @@ function setDisplay(lat,long){
 
         let day1=forecastDate(date,1);
         let icon1=forecast.daily[0].weather[0].icon;
-        let temperature1="Temp: "+forecast.daily[0].temp+"°C";
+        let why="Temp: " +forecast.daily[0].temp.day+ "°C";
         let wind1="Wind: "+forecast.daily[0].wind_speed+"km/h";
         let humidity1="Humidity: "+forecast.daily[0].humidity+"%";
 
         $("#day1").html(day1);
         $("#icon1").html("<img src='https://openweathermap.org/img/wn/" +icon1+ "@2x.png'>");
-        $("#temp1").html(temperature1);
+        $("#temp1").html(why);
         $("#wind1").html(wind1);
         $("#humidity1").html(humidity1);
 
