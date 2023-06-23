@@ -151,7 +151,7 @@ function setDisplay(lat,long){
         
         let day2=forecastDate(date,2);
         let icon2=forecast.daily[1].weather[0].icon;
-        let temperature2="Temp: "+forecast.daily[1].feels_like.day+"°C";
+        let temperature2="Temp: "+forecast.daily[1].temp.day+"°C";
         let wind2="Wind: "+forecast.daily[1].wind_speed+"km/h";
         let humidity2="Humidity: "+forecast.daily[1].humidity+"%";
 
@@ -164,7 +164,7 @@ function setDisplay(lat,long){
         
         let day3=forecastDate(date,3);
         let icon3=forecast.daily[2].weather[0].icon;
-        let temperature3="Temp: "+forecast.daily[2].feels_like.day+"°C";
+        let temperature3="Temp: "+forecast.daily[2].temp.day+"°C";
         let wind3="Wind: "+forecast.daily[2].wind_speed+"km/h";
         let humidity3="Humidity: "+forecast.daily[2].humidity+"%";
 
@@ -177,7 +177,7 @@ function setDisplay(lat,long){
         
         let day4=forecastDate(date,4);
         let icon4=forecast.daily[3].weather[0].icon;
-        let temperature4="Temp: "+forecast.daily[3].feels_like.day+"°C";
+        let temperature4="Temp: "+forecast.daily[3].temp.day+"°C";
         let wind4="Wind: "+forecast.daily[3].wind_speed+"km/h";
         let humidity4="Humidity: "+forecast.daily[3].humidity+"%";
 
@@ -190,7 +190,7 @@ function setDisplay(lat,long){
         
         let day5=forecastDate(date,5);
         let icon5=forecast.daily[4].weather[0].icon;
-        let temperature5="Temp: "+forecast.daily[4].feels_like.day+"°C";
+        let temperature5="Temp: "+forecast.daily[4].temp.day+"°C";
         let wind5="Wind: "+forecast.daily[4].wind_speed+"km/h";
         let humidity5="Humidity: "+forecast.daily[4].humidity+"%";
 
